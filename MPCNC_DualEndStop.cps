@@ -667,6 +667,8 @@ function writeFirstSection() {
         break;
     }
     writeln("M84 S0"); // Disable steppers timeout
+    writeln("G28 X0 Y0 F3000"); // Go to X0 Y0
+    writeln("G0 Z0 F300"); // go to z0
     if (properties.jobSetOriginOnStart) {
       writeln("G92 X0 Y0 Z0"); // Set origin to initial position
     }
